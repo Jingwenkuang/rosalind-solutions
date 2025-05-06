@@ -1,0 +1,37 @@
+#method 1
+def ReverseComplement(Pattern):   
+    # your code here
+    reversePattern = Reverse(Pattern)
+    complementPattern = Complement(reversePattern)
+    return complementPattern
+    
+# Copy your Reverse() function here.
+def Reverse(Pattern):
+    # your code here
+    reverse = ""
+    for char in Pattern:
+        reverse = char + reverse
+    return reverse
+
+# Copy your Complement() function here.
+def Complement(Pattern):
+    # your code here
+    complement = ""
+    for char in Pattern:
+        if char == "A":
+            complement += "T"
+        elif char == "T":
+            complement += "A"
+        elif char == "C":
+            complement += "G"
+        elif char == "G":
+            complement += "C"
+    return complement
+
+#method 2
+# st = "AAAACCCGGT"
+# st = st.replace('A', 't').replace('T', 'a').replace('C', 'g').replace('G', 'c').upper()[::-1]
+# print st
+Pattern = "TATAGTACGTGGTGTACGCCAGACGTGACCCTCAGTGACAATTCGCTAGTAAAGTCCGTGCTGGTTAATTGGCCTCCGAGCTTTAACTTTGCGTTGGATATGAGCTCATTCCATAAGTACCGCTCGTTTCGTGGAAGAGTTTTCTTGACATGTCCACCCCTTACCCCGCCGTCGCCTTAATGTACCAGTACAGGCGATTAGGCCATTGATTTGGTACCAGGTTAACCCTCACTGACCCAAGACACCTTCGGAGATAACAGCTTACAGCCGTAGAAGGCGCTCCGCTGAGTTGCCCTTAAGGATAACCACTGCTAGCAGCGGGCAGGATAGTGCTCAGGAGGCTTTTTTTCCAGATACCTCCGAGACCAGCTCTTTCACTTTTCACAACAAACCCAAGCCTGCCCACACTGGGCTTGACTGTATCTGTGCATACGCATGCCTCGTGGATTTAACTGCCATGGCTGGCCCGGAAAAGCGCTCGCCATGATCGGGAGACCCTAGGTACGTAAATACGATTAGCTTAGCCTTAGGCAACTTAATCGAATGCCGATATTCCTGAGTAACATGCCCGCATCAAGTCGTACCTTGGGCCTTTGGAGTCTTACCTGCGCCGCGTGGCCCATTCGTAAGCATCGCCCTACAATGAAGACCTAACATATCATTGAGTATTAGTTGTAACATTCTGCAACGCCTCATATGATGTGTCGTGGCCGTTCCACTCCTCGCCCTAAAGACGACCATCAAACCTACTAGCTGTCGGCACGTTATTCTGAACCAAGCGGTCGAAATTGACGACCGTAGGTTGTTTCGCCCGACATTCTAAGGGGCGCTATCAAATTGAAGAAAGCCCGTTACACCGA"
+print(ReverseComplement(Pattern))
+    
