@@ -24,3 +24,14 @@ def HammingDistance(p, q):
 p = "CAGAAAGGAAGGTCCCCATACACCGACGCACCAGTTTA"
 q = "CACGCCGTATGCATAAACGAGCCGCACGAACCAGAGAG"
 print(HammingDistance(p, q))
+
+def Normalize(Probabilities):
+    sum_of_values=sum(Probabilities.values())
+    normal={}
+    for symbol in Probabilities:
+        normal[symbol]=Probabilities[symbol]/sum_of_values
+    return normal
+# Sample Input:
+# {'A': 0.1, 'C': 0.1, 'G': 0.1, 'T': 0.1}
+# Sample Output:
+# {'A': 0.25, 'C': 0.25, 'G': 0.25, 'T': 0.25}
