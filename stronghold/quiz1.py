@@ -6,7 +6,7 @@
 print('--------1------------------------------18')
 from Bio import SeqIO
 
-fasta_file = "/Users/wendy/Desktop/dna2.fasta"  # Replace with your actual file name
+fasta_file = "/Users/xx/Desktop/dna2.fasta"  # Replace with your actual file name
 
 count = 0
 for record in SeqIO.parse(fasta_file, "fasta"):
@@ -19,7 +19,7 @@ print(f"Number of records in the FASTA file: {count}")
 print('--------2------------------------------4894')
 from Bio import SeqIO
 
-filename = "/Users/wendy/Desktop/dna2.fasta"  # Replace with your actual file path
+filename = "/Users/xx/Desktop/dna2.fasta"  # Replace with your actual file path
 max_length = 0
 longest_seq_id = ""
 
@@ -37,7 +37,7 @@ print(f"Length of longest sequence: {max_length} bp")
 print('--------3------------------------------115')
 from Bio import SeqIO
 
-filename = "/Users/wendy/Desktop/dna2.fasta"  # Replace with your file path
+filename = "/Users/xx/Desktop/dna2.fasta"  # Replace with your file path
 min_length = float('inf')  # Initialize with a large number
 shortest_seq_id = ""
 
@@ -73,7 +73,7 @@ def find_longest_orf(sequence, frame):
                     break  # Stop at first in-frame stop codon
     return max_orf_length
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 max_orf_frame2 = 0
 best_record = None
 
@@ -111,7 +111,7 @@ def find_longest_orf_frame3(record):
                     break  # Stop at first in-frame stop
     return max_orf_length, start_pos
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 max_orf_len = 0
 best_start = 0
 best_record = None
@@ -146,7 +146,7 @@ def find_longest_orf_any_frame(record):
                         break  # Stop at first in-frame stop
     return max_orf_length
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 global_max_orf = 0
 best_record = None
 
@@ -182,7 +182,7 @@ def find_longest_orf_in_sequence(sequence_id, filename):
             return max_orf_length
     return None
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/User/xx/Desktop/dna2.fasta"
 sequence_id = "gi|142022655|gb|EQ086233.1|16"
 longest_orf = find_longest_orf_in_sequence(sequence_id, filename)
 
@@ -203,7 +203,7 @@ def find_most_frequent_6mer(filename):
     most_frequent = max(kmer_counts.items(), key=lambda x: x[1])
     return most_frequent
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 repeat_6mer, count = find_most_frequent_6mer(filename)
 print(f"Most frequent 6-mer: {repeat_6mer} (occurs {count} times)")
 #-9-------------------------------------------
@@ -228,7 +228,7 @@ def find_top_12mers(filename):
     top_12mers = [kmer for kmer, count in kmer_counts.items() if count == max_count]
     return max_count, top_12mers
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 max_occurrences, top_12mers = find_top_12mers(filename)
 
 print(f"Max occurrences of any 12-mer: {max_occurrences}")
@@ -252,6 +252,6 @@ def find_top_7mer(filename):
     top_7mer = [kmer for kmer, count in kmer_counts.items() if count == max_count]
     return top_7mer[0], max_count
 
-filename = "/Users/wendy/Desktop/dna2.fasta"
+filename = "/Users/xx/Desktop/dna2.fasta"
 top_7mer, count = find_top_7mer(filename)
 print(f"Most frequent 7-mer: {top_7mer} (occurs {count} times)")

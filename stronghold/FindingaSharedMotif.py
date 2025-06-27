@@ -5,7 +5,7 @@ def read_fasta_txt(file_path):
     sequences = []
     current_sequence = ''
     
-    with open('/Users/wendy/Desktop/rosalind_lcsm.txt', 'r') as file:
+    with open('/Users/xx/Desktop/rosalind_lcsm.txt', 'r') as file:
         for line in file:
             line = line.strip()
             

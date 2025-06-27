@@ -4,7 +4,7 @@ from collections import defaultdict
 def read_fasta(filename):
     """Read a FASTA file and return a dictionary of sequences."""
     sequences = {}
-    filename = "/Users/wendy/Desktop/dna2.fasta"
+    filename = "/Users/xx/Desktop/dna2.fasta"
     with open(filename, 'r') as f:
         current_id = None
         current_seq = []

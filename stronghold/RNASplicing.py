@@ -4,7 +4,7 @@ from Bio.Seq import Seq
 
 # Step 1: Read sequences from the FASTA file
 # Replace "your_input_file.fasta" with your actual file path
-fasta_file = '/Users/wendy/Downloads/rosalind_splc.txt'
+fasta_file = '/Users/xx/Downloads/rosalind_splc.txt'
 
 # Use SeqIO to read all the sequences in the FASTA file
 records = list(SeqIO.parse(fasta_file, "fasta"))

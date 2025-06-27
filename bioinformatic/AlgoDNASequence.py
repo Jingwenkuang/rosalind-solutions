@@ -45,14 +45,14 @@ def readGenome(filename):
 #             sequences.append(seq)
 #             qualities.append(qual)
 #     return sequences, qualities
-# filename = '/Users/wendy/Desktop/lambda_virus.fa'
+# filename = '/Users/xx/Desktop/lambda_virus.fa'
 # print(readGenome(filename))
 
 print('--------1-----------------')
 from Bio import SeqIO
 
 # Load the genome file
-filename = '/Users/wendy/Desktop/lambda_virus.fa'
+filename = '/Users/xx/Desktop/lambda_virus.fa'
 record = SeqIO.read(filename, "fasta")
 sequence = str(record.seq)
 
@@ -94,6 +94,6 @@ def naive_2mm(P, T): #2 mismatch
         if mismatch <= 2:
             occurrences.append(i)
     return occurrences
-lambda_virus_genome = readGenome('/Users/wendy/Desktop/lambda_virus.fa')
+lambda_virus_genome = readGenome('/Users/xx/Desktop/lambda_virus.fa')
 occurrences = naive_2mm('TTCAAGCC', lambda_virus_genome)
 print(len(occurrences))
