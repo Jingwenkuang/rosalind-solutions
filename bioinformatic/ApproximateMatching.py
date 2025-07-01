@@ -43,11 +43,9 @@ def z_array(s):
                 z[k] = r - k + 1
     return z
 
-
 def n_array(s):
     """ Compile the N array (Gusfield theorem 2.2.2) from the Z array """
     return z_array(s[::-1])[::-1]
-
 
 def big_l_prime_array(p, n):
     """ Compile L' array (Gusfield theorem 2.2.2) using p and N array.
@@ -163,10 +161,15 @@ def boyer_moore(p, p_bm, t):
     """ Do Boyer-Moore matching """
     i = 0
     occurrences = []
-    while i < len(t) - len(p) + 1:
+    while i < len(t) - len(p) + 1: #6
         shift = 1
         mismatched = False
-        for j in range(len(p)-1, -1, -1):
+        for j in range(len(p)-1, -1, -1): 
+        # start = len(p) - 1 ---> last index of string p
+        # stop = -1 ---> go until just before index -1  (i.e. stop after hitting 0)
+        # step = -1 ---> step backwards
+        # p = 'AACTTG'
+        # t = 'CACTTAATTTG'
             if p[j] != t[i+j]:
                 skip_bc = p_bm.bad_character_rule(j, t[i+j])
                 skip_gs = p_bm.good_suffix_rule(j)
@@ -179,8 +182,10 @@ def boyer_moore(p, p_bm, t):
             shift = max(shift, skip_gs)
         i += shift
     return occurrences
-def approximate_match(p, t, n):
+def approximate_match(p, t, n): # p = 6, n = 2
     segment_length = int(round(len(p) / (n+1)))
+    print('------------------segment----------------')
+    print(segment_length)
     all_matches = set()
     for i in range(n+1):
         start = i*segment_length

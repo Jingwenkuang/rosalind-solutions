@@ -5,7 +5,7 @@ def boyer_moore(p, p_bm, t):
     while i < len(t) - len(p) + 1:
         shift = 1
         mismatched = False
-        for j in range(len(p)-1, -1, -1):
+        for j in range(len(p)-1, -1, -1): # -1 means going backward, and stop before -1
             if p[j] != t[i+j]:
                 skip_bc = p_bm.bad_character_rule(j, t[i+j])
                 skip_gs = p_bm.good_suffix_rule(j)
