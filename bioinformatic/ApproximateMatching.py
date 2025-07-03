@@ -182,33 +182,49 @@ def boyer_moore(p, p_bm, t):
             shift = max(shift, skip_gs)
         i += shift
     return occurrences
-def approximate_match(p, t, n): # p = 6, n = 2
+
+def approximate_match(p, t, n): # p = 6, n = 2 # n is the number of mismatches
     segment_length = int(round(len(p) / (n+1)))
     print('------------------segment----------------')
     print(segment_length)
     all_matches = set()
+    print('--------------------all matches-----------')
+    print(all_matches)
     for i in range(n+1):
         start = i*segment_length
         end = min((i+1)*segment_length, len(p))
-        p_bm = BoyerMoore(p[start:end], alphabet='ACGT')
+        print('i', i)
+        print('start', start)
+        print('end', end)
+        p_bm = BoyerMoore(p[start:end], alphabet='ACGT') 
+        #preprocessing boyerMoore, make the table of good suffix rules and bad char rules
+        print('--------------p-bm------------')
+        print(p[start:end])
         matches = boyer_moore(p[start:end], p_bm, t)
+        # will return a list of places where that sub string p has matched to text t
         # Extend matching segments to see if whole p matches
         for m in matches:
+            print('matches', matches)
+            print('m', m)
             if m < start or m-start+len(p) > len(t):
                 continue
             mismatches = 0
+            print('all matches', all_matches)
             for j in range(0, start):
+                print('first j', j)
                 if not p[j] == t[m-start+j]:
                     mismatches += 1
                     if mismatches > n:
                         break
             for j in range(end, len(p)):
+                print('sec j', j)
                 if not p[j] == t[m-start+j]:
                     mismatches += 1
                     if mismatches > n:
                         break
             if mismatches <= n:
                 all_matches.add(m - start)
+            
     return list(all_matches)
 p = 'AACTTG'
 t = 'CACTTAATTTG'

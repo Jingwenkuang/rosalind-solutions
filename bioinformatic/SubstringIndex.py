@@ -18,7 +18,8 @@ class Index(object):
 
         kmer = p[:self.k]  # query with first k-mer
         i = bisect.bisect_left(self.index, (kmer, -1))  # binary search  # i = 13
-
+        # -1 means all the indices in the list are greater than negetive one
+        # always get the first occurrence of that.
         hits = []
         while i < len(self.index):  # collect matching index entries
             if self.index[i][0] != kmer:
@@ -30,7 +31,7 @@ class Index(object):
 def queryIndex(p, t, index):
     k = index.k
     offsets = []
-    for i in index.query(p):  #[7, 14]
+    for i in index.query(p):  #[7, 14] return all the possible hits
         if p[k:] == t[i+k:i+len(p)]:  # verify that rest of P matches
         # p[4:] == t[7+4:7+4]   
         # '' == '' , True
