@@ -13,6 +13,6 @@ def overlap(a, b, min_length=3):
             return len(a) - start
         start += 1
 
-a = 'TTACGT'
+a = 'TTAAAAAAACGT'
 b = 'CGTACCGT'
 print(overlap(a, b, min_length=3))
