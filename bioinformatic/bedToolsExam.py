@@ -38,3 +38,32 @@
 
 12. What is the length of the first sequence in the genome file?
     % samtools view –H athal_wu_0_A.bam | grep “SN:” | more #29923332
+
+13. What alignment tool was used?
+    % samtools view -H athal_wu_0_A.bam | grep 'PG'
+    #stampy
+
+14. What is the read identifier (name) for the first alignment?
+    % samtools view athal_wu_0_A.bam | head -1 | cut -f1
+        #GAII05_0002:1:113:7822:3886#0
+
+15. What is the start position of this read’s mate on the genome? Give this as ‘chrom:pos’ if the read was mapped, or ‘*” if unmapped.
+    % samtools view athal_wu_0_A.bam | head -n 1
+    # Chr3:11700332
+
+16. How many overlaps (each overlap is reported on one line) are reported?
+    % bedtools intersect –abam athal_wu_0_A.sorted.bam –b athal_wu_0_A_annot.gtf –bed -wo > overlaps.bed
+    % wc –l overlaps.bed  #3101
+
+17. How many of these are 10 bases or longer?
+    % cut -f22 overlaps.bed | grep -E '^[0-9]{2,}$' | wc -l # 2899
+
+
+18. How many alignments overlap the annotations?
+    % cut -f1-12 overlaps.bed | sort -u | wc -l #3101
+
+19. Conversely, how many exons have reads mapped to them?
+    % cut -f13-21 overlaps.bed | sort -u | wc -l #21
+
+20. If you were to convert the transcript annotations in the file “athal_wu_0_A_annot.gtf” into BED format, how many BED records would be generated?
+    % cut –f9 athal_wu_0_A_annot.gtf | cut –d ‘ ‘ –f1,2 | sort –u | wc -l #4
