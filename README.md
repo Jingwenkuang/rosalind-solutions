@@ -1,5 +1,25 @@
 
-This repository contains my Python solutions to problems from Rosalind, a platform for learning bioinformatics through hands-on problem solving. Each problem explores key topics such as DNA/RNA sequence analysis, genome assembly, dynamic programming in bioinformatics, and more.
+# Rosalind Solutions
 
-My goal in completing these challenges is to strengthen my algorithmic thinking and demonstrate practical coding skills in computational biology. The code is organized by problem, and each solution includes comments and sample inputs where applicable.
+A collection of Python solutions to bioinformatics problems from [Rosalind](https://rosalind.info/), a platform for learning computational biology through problem-solving.
 
+## Technologies
+- Python 3
+
+## Topics Covered
+- DNA and RNA Sequence Analysis
+- Protein Sequence Analysis
+- Genome Assembly
+- Bioinformatics Algorithms
+- Dynamic Programming
+
+## Repository Structure
+
+- `bioinformatic/` – Python solutions to bioinformatics problems
+- `stronghold/` – Solutions to problems in the Rosalind Stronghold track
+
+## About
+
+This project documents my independent practice in Python programming and computational biology. Through solving bioinformatics problems, I explore algorithms and computational approaches used in biological sequence analysis.
+
+Each solution is organized by problem and includes code comments where appropriate.
