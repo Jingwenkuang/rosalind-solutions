@@ -7,11 +7,13 @@ A collection of Python solutions to bioinformatics problems from [Rosalind](http
 - Python 3
 
 ## Topics Covered
-- DNA and RNA Sequence Analysis
-- Protein Sequence Analysis
+- DNA Sequence Pattern Matching
+- Approximate String Matching
+- Sequence Alignment
+- Edit Distance
 - Genome Assembly
-- Bioinformatics Algorithms
-- Dynamic Programming
+- de Bruijn Graph Algorithms
+- Computational Biology
 
 ## Repository Structure
 
